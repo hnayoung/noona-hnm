@@ -8,7 +8,7 @@ const ProductCard = ({ item }) => {
   };
   return (
     <div className="card" onClick={() => showProduct(item.id)}>
-      <img src={item?.img} />
+      <img src={item?.img} alt="" />
       <div className="choice">{item?.choice ? "Conscious choice" : ""}</div>
       <div>{item?.title}</div>
       <div>₩{item?.price}</div>

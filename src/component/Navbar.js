@@ -55,7 +55,7 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
         <Link to="/">
           <img
             width={100}
-            src="https://logos-world.net/wp-content/uploads/2020/04/HM-Logo-1999-present.jpg"
+            src="https://logos-world.net/wp-content/uploads/2020/04/HM-Logo-1999-present.jpg" alt=""
           />
         </Link>
       </div>
