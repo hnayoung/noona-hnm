@@ -23,18 +23,21 @@ import PrivateRoute from "./route/PrivateRoute";
 // 8. 로그인을 하면 로그아웃이 보이고 로그아웃을 하면 로그인이 보인다
 // 9. 상품을 검색할 수 있다. 
 function App() {
-  const [authenticate, setAuthenticate] = useState(false) //true : 로그인이 됨 , false : 로그인이 안됨  
-  useEffect(()=>{
-    console.log("Aaaa", authenticate);
-  }, [authenticate]);
+  let [authenticate, setAuthenticate] = useState(false);
   return (
-    <div >
-    <Navbar />
-     <Routes>
-      <Route path="/" element={<ProductAll/>}/>
-      <Route path="/login" element={<Login setAuthenticate={setAuthenticate}/>}/>
-      <Route path="/product/:id" element={<PrivateRoute authenticate= {authenticate} />}/>
-     </Routes>
+    <div>
+      <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate} />
+      <Routes>
+        <Route path="/" element={<ProductAll />} />
+        <Route
+          path="/login"
+          element={<Login setAuthenticate={setAuthenticate} />}
+        />
+        <Route
+          path="/product/:id"
+          element={<PrivateRoute authenticate={authenticate} />}
+        />
+      </Routes>
     </div>
   );
 }

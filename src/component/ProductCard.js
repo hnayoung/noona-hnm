@@ -1,27 +1,20 @@
-import React from 'react'
+import React from "react";
 import { useNavigate } from "react-router-dom";
-
 
 const ProductCard = ({ item }) => {
   const navigate = useNavigate();
-  
-  const showDetail = () => {
-    if (item && item.id) {
-      navigate(`/product/${item.id}`);
-    } else {
-      console.error("Item is undefined or missing 'id'");
-    }
-  }
-
- return (
-    <div className="card" onClick={showDetail}>
-      <img src={item?.img} alt="product"/>
-      <div>Conscious choice</div>
+  const showProduct = (id) => {
+    navigate(`/product/${id}`);
+  };
+  return (
+    <div className="card" onClick={() => showProduct(item.id)}>
+      <img src={item?.img} />
+      <div className="choice">{item?.choice ? "Conscious choice" : ""}</div>
       <div>{item?.title}</div>
-      <div>{item?.price}원</div>
-      <div>{item?.new === true ? "신제품" : ""}</div>
+      <div>₩{item?.price}</div>
+      <div className="new-product">{item?.new ? "신제품" : ""}</div>
     </div>
   );
-}
+};
 
 export default ProductCard;
