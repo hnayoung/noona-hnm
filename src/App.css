@@ -141,7 +141,7 @@ body{
   width: 120px;
 }
 
-.side-menu .closebtn {
+.side-menu closebtn {
   position: absolute;
   top: 0;
   right: 25px;
